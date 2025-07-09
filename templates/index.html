@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Resume Builder</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI-Powered Resume Builder</h1>
+            <p>Create the perfect resume that gets you hired</p>
+        </header>
+
+        <div class="builder-container">
+            <div class="resume-form">
+                <h2>Your Information</h2>
+                
+                <div class="form-section" draggable="true">
+                    <h3>Personal Details</h3>
+                    <input type="text" id="name" placeholder="Full Name">
+                    <input type="text" id="email" placeholder="Email">
+                    <input type="text" id="phone" placeholder="Phone">
+                    <input type="text" id="linkedin" placeholder="LinkedIn URL">
+                </div>
+
+                <div class="form-section" draggable="true">
+                    <h3>Summary</h3>
+                    <textarea id="summary" placeholder="Professional summary"></textarea>
+                    <button class="ai-suggest" data-for="summary">Get AI Suggestions</button>
+                </div>
+
+                <div class="form-section" draggable="true">
+                    <h3>Work Experience</h3>
+                    <div class="experience-entry">
+                        <input type="text" class="job-title" placeholder="Job Title">
+                        <input type="text" class="company" placeholder="Company">
+                        <input type="text" class="duration" placeholder="Duration">
+                        <textarea class="description" placeholder="Job Description"></textarea>
+                        <button class="ai-suggest" data-for="experience">Improve with AI</button>
+                    </div>
+                    <button id="add-experience">+ Add Another</button>
+                </div>
+
+                <div class="form-section" draggable="true">
+                    <h3>Education</h3>
+                    <input type="text" id="degree" placeholder="Degree">
+                    <input type="text" id="university" placeholder="University">
+                    <input type="text" id="grad-year" placeholder="Graduation Year">
+                </div>
+
+                <div class="form-section" draggable="true">
+                    <h3>Skills</h3>
+                    <div class="skills-container">
+                        <input type="text" id="skills-input" placeholder="Add skill">
+                        <button id="add-skill">+ Add</button>
+                    </div>
+                    <div id="skills-list"></div>
+                </div>
+
+                <div class="actions">
+                    <button id="analyze-resume">Analyze & Improve</button>
+                    <button id="download-pdf">Download PDF</button>
+                    <button id="preview-resume">Preview Resume</button>
+                </div>
+            </div>
+
+            <div class="resume-preview">
+                <h2>Resume Preview</h2>
+                <div id="preview-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Suggestions Modal -->
+    <div id="ai-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>AI Suggestions</h3>
+            <div id="ai-suggestions"></div>
+            <button id="apply-suggestion">Apply Suggestion</button>
+        </div>
+    </div>
+
+    <script src="../static/js/script.js"></script>
+</body>
+</html>
